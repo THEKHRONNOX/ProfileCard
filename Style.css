@@ -1,0 +1,62 @@
+html {
+    font-size: 65,2%;
+}
+
+.papapollo{
+    height: 46.9rem;
+    margin: 0.2rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    height: 17rem;
+    align-content: center;
+    margin: 1rem ;
+    /*border: black solid 0.2rem;*/
+    width: 42rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 1.6rem gray;
+}
+
+.follow {
+    color: black;
+    background-color: rgb(61, 207, 251);
+    margin: 1rem;
+    margin-top: 2.7rem;
+    margin-right: 4rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    border-style: none;
+    font-family: "Goldman";
+    /*font-size: rem;*/
+}
+.follow:hover{
+    border: rgb(243, 215, 221) solid 2px;
+    background-color: rgb(4, 155, 214);
+    color: ghostwhite;
+
+}
+
+.fotoperfil {
+    display: flex;
+    align-items: center;
+    margin: 4rem;
+    margin-right: 1.5rem;
+}
+.fotoperfil > img {
+    border-radius: 50%;
+    width: 8rem;
+}
+
+.texto {
+    display: flex;
+    align-items: center;
+    font-family: "Goldman";
+    font-size: 0.7rem;
+
+}
