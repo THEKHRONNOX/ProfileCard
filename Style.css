@@ -1,62 +1,153 @@
-html {
-    font-size: 65,2%;
+* {
+  /*todas las letras de la pagina reciben Montserrat como tipografia*/
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box; /*todos los elementos de la pagina se adaptan */
+  margin: 0;
+  padding: 0;
 }
 
-.papapollo{
-    height: 46.9rem;
-    margin: 0.2rem;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /*
+        vw y vh son medidas relativas al viewport (pantalla del telefono visible)
+        vw para el width y vh para el height
+    */
+  width: 100vw;
+  height: 100vh;
+
+  background: #8e2de2;
+  background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2);
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
 }
 
 .contenedor {
-    display: flex;
-    justify-content: space-between;
-    height: 17rem;
-    align-content: center;
-    margin: 1rem ;
-    /*border: black solid 0.2rem;*/
-    width: 42rem;
-    box-sizing: border-box;
-    box-shadow: 0 0 1.6rem gray;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 450px;
+  /*se hace la sombra más pequeña y mas transparente*/
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.514);
+  border-radius: 8px;
+  padding: 2rem; /*el contenedor se ve mas bonito con relleno*/
 }
 
 .follow {
-    color: black;
-    background-color: rgb(61, 207, 251);
-    margin: 1rem;
-    margin-top: 2.7rem;
-    margin-right: 4rem;
-    padding: 0.5rem;
-    border-radius: 0.2rem;
-    border-style: none;
-    font-family: "Goldman";
-    /*font-size: rem;*/
+  /*evitar que el usuario selecione el texto del boton*/
+  user-select: none;
+  color: #fff;
+  display: block; /*block para usar el margin: auto y centrar el boton*/
+  margin: auto;
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2,
+    #7419c3,
+    rgb(99, 9, 179)
+  );
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2,
+    #7419c3,
+    rgb(99, 9, 179)
+  );
+  /*300% para poder desplazar el background al hacer :hover*/
+  background-size: 300% 100%;
+  margin-top: 2.5rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none; /*se quita el border que le da el navegador al tener el foco*/
 }
-.follow:hover{
-    border: rgb(243, 215, 221) solid 2px;
-    background-color: rgb(4, 155, 214);
-    color: ghostwhite;
+.follow:hover {
+  /*con este se hace que el background del boton se mueva de posicion*/
+  background-position-x: -200px;
+}
 
+.follow:focus {
+  /*movemos el boton y ponemos la sombra tipica de boostrap*/
+  transform: translateY(-5px);
+  box-shadow: 0 0 1px 0.2rem #8d2de29f;
+}
+
+.follow-icon {
+  color: #fff;
+  margin-left: 0.5rem;
+  font-size: 18px;
 }
 
 .fotoperfil {
-    display: flex;
-    align-items: center;
-    margin: 4rem;
-    margin-right: 1.5rem;
+  user-select: none;
+  display: block;
+  align-self: center; /* se usa para alinear un determinado elemento sin afectar
+                         los otros*/
+  margin-bottom: 1rem;
 }
 .fotoperfil > img {
-    border-radius: 50%;
-    width: 8rem;
+  border-radius: 50%;
+  width: 8rem;
+  width: 128px;
+  height: 128px;
+  border: 1px solid rgba(0, 0, 0, 0.212);
+
+  /*padding para separar el border gris de la imagen*/
+  padding: 0.5rem;
 }
 
 .texto {
-    display: flex;
-    align-items: center;
-    font-family: "Goldman";
-    font-size: 0.7rem;
+  line-height: 1.6;
+  text-align: center;
+}
 
+/*ocurre cuando el usuario selecciona el texto*/
+.texto::selection {
+  background: #8e2de2;
+  color: #fff;
+}
+
+.github {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 98px;
+  height: 80px;
+}
+
+.github > img {
+  width: 100%;
+  height: 100%;
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+
+.link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 6px;
+  left: 0;
+  bottom: 0;
+  background: #8d2de28c;
+  transition: height 0.2s ease;
+}
+
+.link:hover{
+    color: #6304b6;
+}
+
+.link:hover::before {
+  height: 100%;
 }
